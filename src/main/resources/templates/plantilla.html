@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+<head>
+    <title>Plantilla</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <!-- Contenido específico de la plantilla -->
+        <div class="container">
+            <div class="page-inner">
+                <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
+                    <div>
+                        <h3 class="fw-bold mb-3">Dashboard</h3>
+                        <h6 class="op-7 mb-2">Free Bootstrap 5 Admin Dashboard</h6>
+                    </div>
+                    <div class="ms-md-auto py-2 py-md-0">
+                        <a href="#" class="btn btn-label-info btn-round me-2">Manage</a>
+                        <a href="#" class="btn btn-primary btn-round">Add Customer</a>
+                    </div>
+                </div>
+                <!-- Más contenido aquí -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
