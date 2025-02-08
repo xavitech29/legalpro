@@ -1,72 +1,59 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Kaiadmin - Bootstrap 5 Admin Dashboard</title>
-    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
-    <link rel="icon" th:href="@{/assets/img/kaiadmin/favicon.ico}" type="image/x-icon" />
 
-    <!-- Fonts and icons -->
-    <script th:src="@{/assets/js/plugin/webfont/webfont.min.js}"></script>
-    <script>
-      WebFont.load({
-        google: { families: ["Public Sans:300,400,500,600,700"] },
-        custom: {
-          families: [
-            "Font Awesome 5 Solid",
-            "Font Awesome 5 Regular",
-            "Font Awesome 5 Brands",
-            "simple-line-icons",
-          ],
-          urls: ["../assets/css/fonts.min.css"],
-        },
-        active: function () {
-          sessionStorage.fonts = true;
-        },
-      });
-    </script>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Purple Admin</title>
+<!-- plugins:css -->
+<link rel="stylesheet"
+	th:href="@{/assets/vendors/mdi/css/materialdesignicons.min.css}">
+<link rel="stylesheet"
+	th:href="@{/assets/vendors/ti-icons/css/themify-icons.css}">
+<link rel="stylesheet"
+	th:href="@{/assets/vendors/css/vendor.bundle.base.css}">
+<link rel="stylesheet"
+	th:href="@{/assets/vendors/font-awesome/css/font-awesome.min.css}">
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}" />
-    <link rel="stylesheet" th:href="@{/assets/css/plugins.min.css}" />
-    <link rel="stylesheet" th:href="@{/assets/css/kaiadmin.min.css}" />
-    <link rel="stylesheet" th:href="@{/assets/css/demo.css}" />
+<link rel="stylesheet" th:href="@{/assets/css/style.css}">
+<!-- End layout styles -->
+<link rel="shortcut icon" th:href="@{/assets/images/favicon.png}" />
+
 </head>
 <body>
-    <div class="wrapper">
-        <!-- Incluir el fragmento del sidebar -->
-        <div th:replace="~{fragments/sidebar :: sidebar}"></div>
 
-        <div class="main-panel">
-            <!-- Incluir el fragmento del header -->
-            <div th:replace="~{fragments/header :: header}"></div>
+	<div class="container-scroller">
 
-            <!-- Contenido dinámico -->
-            <div layout:fragment="content"></div>
+		<!-- Incluir el fragmento del header -->
+		<div th:replace="~{fragments/header :: header}"></div>
 
-            <!-- Incluir el fragmento del footer -->
-            <div th:replace="~{fragments/footer :: footer}"></div>
-        </div>
-    </div>
+		<div class="container-fluid page-body-wrapper">
+			<!-- Incluir el fragmento del sidebar -->
+			<div th:replace="~{fragments/sidebar :: sidebar}"></div>
 
-    <!-- Scripts -->
-    <script th:src="@{/assets/js/core/jquery-3.7.1.min.js}"></script>
-    <script th:src="@{/assets/js/core/popper.min.js}"></script>
-    <script th:src="@{/assets/js/core/bootstrap.min.js}"></script>
-    <script th:src="@{/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js}"></script>
-    <!--  <script th:src="@{/assets/js/plugin/chart.js/chart.min.js}"></script>
-    <script th:src="@{/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js}"></script>
-    <script th:src="@{/assets/js/plugin/chart-circle/circles.min.js}"></script>
-    <script th:src="@{/assets/js/plugin/datatables/datatables.min.js}"></script>
-    <script th:src="@{/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js}"></script>
-    <script th:src="@{/assets/js/plugin/jsvectormap/jsvectormap.min.js}"></script>
-    <script th:src="@{/assets/js/plugin/jsvectormap/world.js}"></script>
-    <script th:src="@{/assets/js/plugin/sweetalert/sweetalert.min.js}"></script>-->
-    <script th:src="@{/assets/js/kaiadmin.min.js}"></script>
-    <script th:src="@{/assets/js/setting-demo2.js}"></script>
-   
-    
-    
+			<div class="main-panel">
+
+				<!-- Contenido dinámico -->
+				<div layout:fragment="content"></div>
+
+				<!-- Incluir el fragmento del footer -->
+				<div th:replace="~{fragments/footer :: footer}"></div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<script th:src="@{/assets/vendors/js/vendor.bundle.base.js}"></script>
+	<script th:src="@{/assets/js/off-canvas.js}"></script>
+	<script th:src="@{/assets/js/misc.js}"></script>
+	<script th:src="@{/assets/js/settings.js}"></script>
+	<script th:src="@{/assets/js/todolist.js}"></script>
+	<script th:src="@{/assets/js/jquery.cookie.js}"></script>
+
+
 </body>
 </html>

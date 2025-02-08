@@ -6,369 +6,182 @@
 </head>
 <body>
 	<div th:fragment="header">
-		<!-- Contenido del header -->
-		<div class="main-header">
-			<div class="main-header-logo">
-				<div class="logo-header" data-background-color="dark">
-					<a href="index.html" class="logo"> <img
-						th:src="@{/assets/img/kaiadmin/logo_light.svg}" alt="navbar brand"
-						class="navbar-brand" height="20" />
-					</a>
-					<div class="nav-toggle">
-						<button class="btn btn-toggle toggle-sidebar">
-							<i class="gg-menu-right"></i>
-						</button>
-						<button class="btn btn-toggle sidenav-toggler">
-							<i class="gg-menu-left"></i>
-						</button>
-					</div>
-					<button class="topbar-toggler more">
-						<i class="gg-more-vertical-alt"></i>
-					</button>
-				</div>				
+		<!-- Contenido del header -->	
+		 <!-- partial:../../partials/_navbar.html -->
+		<nav
+			class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+			<div
+				class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+				<a class="navbar-brand brand-logo" href="../../index.html"><img
+					src="../../assets/images/logo.svg" alt="logo" /></a> <a
+					class="navbar-brand brand-logo-mini" href="../../index.html"><img
+					src="../../assets/images/logo-mini.svg" alt="logo" /></a>
 			</div>
-			<!-- Navbar Header -->
-			
-          <nav
-            class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom"
-          >
-            <div class="container-fluid">
-              <nav
-                class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex"
-              >
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <button type="submit" class="btn btn-search pe-1">
-                      <i class="fa fa-search search-icon"></i>
-                    </button>
-                  </div>
-                  <input
-                    type="text"
-                    placeholder="Search ..."
-                    class="form-control"
-                  />
-                </div>
-              </nav>
+			<div class="navbar-menu-wrapper d-flex align-items-stretch">
+				<button class="navbar-toggler navbar-toggler align-self-center"
+					type="button" data-toggle="minimize">
+					<span class="mdi mdi-menu"></span>
+				</button>
+				<div class="search-field d-none d-md-block">
+					<form class="d-flex align-items-center h-100" action="#">
+						<div class="input-group">
+							<div class="input-group-prepend bg-transparent">
+								<i class="input-group-text border-0 mdi mdi-magnify"></i>
+							</div>
+							<input type="text" class="form-control bg-transparent border-0"
+								placeholder="Search projects">
+						</div>
+					</form>
+				</div>
+				<ul class="navbar-nav navbar-nav-right">
+					<li class="nav-item nav-profile dropdown"><a
+						class="nav-link dropdown-toggle" id="profileDropdown" href="#"
+						data-bs-toggle="dropdown" aria-expanded="false">
+							<div class="nav-profile-img">
+								<img src="../../assets/images/faces/face1.jpg" alt="image">
+								<span class="availability-status online"></span>
+							</div>
+							<div class="nav-profile-text">
+								<p class="mb-1 text-black">David Greymaax</p>
+							</div>
+					</a>
+						<div class="dropdown-menu navbar-dropdown"
+							aria-labelledby="profileDropdown">
+							<a class="dropdown-item" href="#"> <i
+								class="mdi mdi-cached me-2 text-success"></i> Activity Log
+							</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#"> <i
+								class="mdi mdi-logout me-2 text-primary"></i> Signout
+							</a>
+						</div></li>
+					<li class="nav-item d-none d-lg-block full-screen-link"><a
+						class="nav-link"> <i class="mdi mdi-fullscreen"
+							id="fullscreen-button"></i>
+					</a></li>
+					<li class="nav-item dropdown"><a
+						class="nav-link count-indicator dropdown-toggle"
+						id="messageDropdown" href="#" data-bs-toggle="dropdown"
+						aria-expanded="false"> <i class="mdi mdi-email-outline"></i> <span
+							class="count-symbol bg-warning"></span>
+					</a>
+						<div
+							class="dropdown-menu dropdown-menu-end navbar-dropdown preview-list"
+							aria-labelledby="messageDropdown">
+							<h6 class="p-3 mb-0">Messages</h6>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item preview-item">
+								<div class="preview-thumbnail">
+									<img src="../../assets/images/faces/face4.jpg" alt="image"
+										class="profile-pic">
+								</div>
+								<div
+									class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+									<h6 class="preview-subject ellipsis mb-1 font-weight-normal">Mark
+										send you a message</h6>
+									<p class="text-gray mb-0">1 Minutes ago</p>
+								</div>
+							</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item preview-item">
+								<div class="preview-thumbnail">
+									<img src="../../assets/images/faces/face2.jpg" alt="image"
+										class="profile-pic">
+								</div>
+								<div
+									class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+									<h6 class="preview-subject ellipsis mb-1 font-weight-normal">Cregh
+										send you a message</h6>
+									<p class="text-gray mb-0">15 Minutes ago</p>
+								</div>
+							</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item preview-item">
+								<div class="preview-thumbnail">
+									<img src="../../assets/images/faces/face3.jpg" alt="image"
+										class="profile-pic">
+								</div>
+								<div
+									class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+									<h6 class="preview-subject ellipsis mb-1 font-weight-normal">Profile
+										picture updated</h6>
+									<p class="text-gray mb-0">18 Minutes ago</p>
+								</div>
+							</a>
+							<div class="dropdown-divider"></div>
+							<h6 class="p-3 mb-0 text-center">4 new messages</h6>
+						</div></li>
+					<li class="nav-item dropdown"><a
+						class="nav-link count-indicator dropdown-toggle"
+						id="notificationDropdown" href="#" data-bs-toggle="dropdown">
+							<i class="mdi mdi-bell-outline"></i> <span
+							class="count-symbol bg-danger"></span>
+					</a>
+						<div
+							class="dropdown-menu dropdown-menu-end navbar-dropdown preview-list"
+							aria-labelledby="notificationDropdown">
+							<h6 class="p-3 mb-0">Notifications</h6>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item preview-item">
+								<div class="preview-thumbnail">
+									<div class="preview-icon bg-success">
+										<i class="mdi mdi-calendar"></i>
+									</div>
+								</div>
+								<div
+									class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+									<h6 class="preview-subject font-weight-normal mb-1">Event
+										today</h6>
+									<p class="text-gray ellipsis mb-0">Just a reminder that you
+										have an event today</p>
+								</div>
+							</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item preview-item">
+								<div class="preview-thumbnail">
+									<div class="preview-icon bg-warning">
+										<i class="mdi mdi-cog"></i>
+									</div>
+								</div>
+								<div
+									class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+									<h6 class="preview-subject font-weight-normal mb-1">Settings</h6>
+									<p class="text-gray ellipsis mb-0">Update dashboard</p>
+								</div>
+							</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item preview-item">
+								<div class="preview-thumbnail">
+									<div class="preview-icon bg-info">
+										<i class="mdi mdi-link-variant"></i>
+									</div>
+								</div>
+								<div
+									class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+									<h6 class="preview-subject font-weight-normal mb-1">Launch
+										Admin</h6>
+									<p class="text-gray ellipsis mb-0">New admin wow!</p>
+								</div>
+							</a>
+							<div class="dropdown-divider"></div>
+							<h6 class="p-3 mb-0 text-center">See all notifications</h6>
+						</div></li>
+					<li class="nav-item nav-logout d-none d-lg-block"><a
+						class="nav-link" href="#"> <i class="mdi mdi-power"></i>
+					</a></li>
+					<li class="nav-item nav-settings d-none d-lg-block"><a
+						class="nav-link" href="#"> <i
+							class="mdi mdi-format-line-spacing"></i>
+					</a></li>
+				</ul>
+				<button
+					class="navbar-toggler navbar-toggler-right d-lg-none align-self-center"
+					type="button" data-toggle="offcanvas">
+					<span class="mdi mdi-menu"></span>
+				</button>
+			</div>
+		</nav>
 
-              <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
-                <li
-                  class="nav-item topbar-icon dropdown hidden-caret d-flex d-lg-none"
-                >
-                  <a
-                    class="nav-link dropdown-toggle"
-                    data-bs-toggle="dropdown"
-                    href="#"
-                    role="button"
-                    aria-expanded="false"
-                    aria-haspopup="true"
-                  >
-                    <i class="fa fa-search"></i>
-                  </a>
-                  <ul class="dropdown-menu dropdown-search animated fadeIn">
-                    <form class="navbar-left navbar-form nav-search">
-                      <div class="input-group">
-                        <input
-                          type="text"
-                          placeholder="Search ..."
-                          class="form-control"
-                        />
-                      </div>
-                    </form>
-                  </ul>
-                </li>
-                <li class="nav-item topbar-icon dropdown hidden-caret">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="messageDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    <i class="fa fa-envelope"></i>
-                  </a>
-                  <ul
-                    class="dropdown-menu messages-notif-box animated fadeIn"
-                    aria-labelledby="messageDropdown"
-                  >
-                    <li>
-                      <div
-                        class="dropdown-title d-flex justify-content-between align-items-center"
-                      >
-                        Messages
-                        <a href="#" class="small">Mark all as read</a>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="message-notif-scroll scrollbar-outer">
-                        <div class="notif-center">
-                          <a href="#">
-                            <div class="notif-img">
-                              <img th:src="@{/assets/img/jm_denis.jpg}" alt="Img Profile" />
-                            </div>
-                            <div class="notif-content">
-                              <span class="subject">Jimmy Denis</span>
-                              <span class="block"> How are you ? </span>
-                              <span class="time">5 minutes ago</span>
-                            </div>
-                          </a>
-                          <a href="#">
-                            <div class="notif-img">
-                              <img th:src="@{/assets/img/chadengle.jpg}" alt="Img Profile" />
-                            </div>
-                            <div class="notif-content">
-                              <span class="subject">Chad</span>
-                              <span class="block"> Ok, Thanks ! </span>
-                              <span class="time">12 minutes ago</span>
-                            </div>
-                          </a>
-                          <a href="#">
-                            <div class="notif-img">
-                              <img th:src="@{/assets/img/mlane.jpg}" alt="Img Profile" />
-                            </div>
-                            <div class="notif-content">
-                              <span class="subject">Jhon Doe</span>
-                              <span class="block">
-                                Ready for the meeting today...
-                              </span>
-                              <span class="time">12 minutes ago</span>
-                            </div>
-                          </a>
-                          <a href="#">
-                            <div class="notif-img">
-                              <img th:src="@{/assets/img/talha.jpg}" alt="Img Profile" />
-                            </div>
-                            <div class="notif-content">
-                              <span class="subject">Talha</span>
-                              <span class="block"> Hi, Apa Kabar ? </span>
-                              <span class="time">17 minutes ago</span>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <a class="see-all" href="javascript:void(0);"
-                        >See all messages<i class="fa fa-angle-right"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item topbar-icon dropdown hidden-caret">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="notifDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    <i class="fa fa-bell"></i>
-                    <span class="notification">4</span>
-                  </a>
-                  <ul
-                    class="dropdown-menu notif-box animated fadeIn"
-                    aria-labelledby="notifDropdown"
-                  >
-                    <li>
-                      <div class="dropdown-title">
-                        You have 4 new notification
-                      </div>
-                    </li>
-                    <li>
-                      <div class="notif-scroll scrollbar-outer">
-                        <div class="notif-center">
-                          <a href="#">
-                            <div class="notif-icon notif-primary">
-                              <i class="fa fa-user-plus"></i>
-                            </div>
-                            <div class="notif-content">
-                              <span class="block"> New user registered </span>
-                              <span class="time">5 minutes ago</span>
-                            </div>
-                          </a>
-                          <a href="#">
-                            <div class="notif-icon notif-success">
-                              <i class="fa fa-comment"></i>
-                            </div>
-                            <div class="notif-content">
-                              <span class="block">
-                                Rahmad commented on Admin
-                              </span>
-                              <span class="time">12 minutes ago</span>
-                            </div>
-                          </a>
-                          <a href="#">
-                            <div class="notif-img">
-                              <img th:src="@{/assets/img/profile2.jpg}" alt="Img Profile" />
-                            </div>
-                            <div class="notif-content">
-                              <span class="block">
-                                Reza send messages to you
-                              </span>
-                              <span class="time">12 minutes ago</span>
-                            </div>
-                          </a>
-                          <a href="#">
-                            <div class="notif-icon notif-danger">
-                              <i class="fa fa-heart"></i>
-                            </div>
-                            <div class="notif-content">
-                              <span class="block"> Farrah liked Admin </span>
-                              <span class="time">17 minutes ago</span>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <a class="see-all" href="javascript:void(0);"
-                        >See all notifications<i class="fa fa-angle-right"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item topbar-icon dropdown hidden-caret">
-                  <a
-                    class="nav-link"
-                    data-bs-toggle="dropdown"
-                    href="#"
-                    aria-expanded="false"
-                  >
-                    <i class="fas fa-layer-group"></i>
-                  </a>
-                  <div class="dropdown-menu quick-actions animated fadeIn">
-                    <div class="quick-actions-header">
-                      <span class="title mb-1">Quick Actions</span>
-                      <span class="subtitle op-7">Shortcuts</span>
-                    </div>
-                    <div class="quick-actions-scroll scrollbar-outer">
-                      <div class="quick-actions-items">
-                        <div class="row m-0">
-                          <a class="col-6 col-md-4 p-0" href="#">
-                            <div class="quick-actions-item">
-                              <div class="avatar-item bg-danger rounded-circle">
-                                <i class="far fa-calendar-alt"></i>
-                              </div>
-                              <span class="text">Calendar</span>
-                            </div>
-                          </a>
-                          <a class="col-6 col-md-4 p-0" href="#">
-                            <div class="quick-actions-item">
-                              <div
-                                class="avatar-item bg-warning rounded-circle"
-                              >
-                                <i class="fas fa-map"></i>
-                              </div>
-                              <span class="text">Maps</span>
-                            </div>
-                          </a>
-                          <a class="col-6 col-md-4 p-0" href="#">
-                            <div class="quick-actions-item">
-                              <div class="avatar-item bg-info rounded-circle">
-                                <i class="fas fa-file-excel"></i>
-                              </div>
-                              <span class="text">Reports</span>
-                            </div>
-                          </a>
-                          <a class="col-6 col-md-4 p-0" href="#">
-                            <div class="quick-actions-item">
-                              <div
-                                class="avatar-item bg-success rounded-circle"
-                              >
-                                <i class="fas fa-envelope"></i>
-                              </div>
-                              <span class="text">Emails</span>
-                            </div>
-                          </a>
-                          <a class="col-6 col-md-4 p-0" href="#">
-                            <div class="quick-actions-item">
-                              <div
-                                class="avatar-item bg-primary rounded-circle"
-                              >
-                                <i class="fas fa-file-invoice-dollar"></i>
-                              </div>
-                              <span class="text">Invoice</span>
-                            </div>
-                          </a>
-                          <a class="col-6 col-md-4 p-0" href="#">
-                            <div class="quick-actions-item">
-                              <div
-                                class="avatar-item bg-secondary rounded-circle"
-                              >
-                                <i class="fas fa-credit-card"></i>
-                              </div>
-                              <span class="text">Payments</span>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-
-                <li class="nav-item topbar-user dropdown hidden-caret">
-                  <a
-                    class="dropdown-toggle profile-pic"
-                    data-bs-toggle="dropdown"
-                    href="#"
-                    aria-expanded="false"
-                  >
-                    <div class="avatar-sm">
-                      <img
-                        th:src="@{/assets/img/profile.jpg}"
-                        alt="usuario_perfil"
-                        class="avatar-img rounded-circle"
-                      />
-                    </div>
-                    <span class="profile-username">
-                      <span class="op-7">Hi,</span>
-                      <span class="fw-bold">Hizrian</span>
-                    </span>
-                  </a>
-                  <ul class="dropdown-menu dropdown-user animated fadeIn">
-                    <div class="dropdown-user-scroll scrollbar-outer">
-                      <li>
-                        <div class="user-box">
-                          <div class="avatar-lg">
-                            <img
-                              src="../assets/img/profile.jpg"
-                              alt="image profile"
-                              class="avatar-img rounded"
-                            />
-                          </div>
-                          <div class="u-text">
-                            <h4>Hizrian</h4>
-                            <p class="text-muted">hello@example.com</p>
-                            <a
-                              href="profile.html"
-                              class="btn btn-xs btn-secondary btn-sm"
-                              >View Profile</a
-                            >
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">My Profile</a>
-                        <a class="dropdown-item" href="#">My Balance</a>
-                        <a class="dropdown-item" href="#">Inbox</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Account Setting</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Logout</a>
-                      </li>
-                    </div>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </nav>
-          <!-- End Navbar -->
-			
-		</div>
 	</div>
 </body>
 </html>
